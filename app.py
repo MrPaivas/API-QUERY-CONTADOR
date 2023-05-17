@@ -5,13 +5,13 @@ import os
 
 
 load_dotenv()
-host = os.getenv("HOST")
-user = os.getenv("USERNAME")
-password = os.getenv("PASSWORD")
-database = os.getenv("DATABASE")
+host = os.getenv("DB_HOST")
+usuario = os.getenv("DB_USER")
+passwd = os.getenv("DB_PASSWORD")
+database = os.getenv("DB_DATABASE")
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = ""
+app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+mysqlconnector://{usuario}:{passwd}@{host}/{database}"
 db.init_app(app)
 
 
@@ -144,4 +144,4 @@ def secretaria():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='10.151.22.123', port=5000)
