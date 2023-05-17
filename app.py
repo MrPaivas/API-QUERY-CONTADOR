@@ -11,7 +11,7 @@ password = os.getenv("PASSWORD")
 database = os.getenv("DATABASE")
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+mysqlconnector://hvho39v1dpf394gs8tc0:pscale_pw_NrDySV5VJSmg70JfOFDkDoRaUC1Lk1GuLIG3gOXde7D@aws.connect.psdb.cloud/impressoras"
+app.config['SQLALCHEMY_DATABASE_URI'] = ""
 db.init_app(app)
 
 
